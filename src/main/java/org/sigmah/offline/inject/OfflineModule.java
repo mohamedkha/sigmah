@@ -70,6 +70,7 @@ import org.sigmah.offline.handler.BatchCommandAsyncHandler;
 import org.sigmah.offline.handler.CreateEntityAsyncHandler;
 import org.sigmah.offline.handler.DeleteAsyncHandler;
 import org.sigmah.offline.handler.GetLinkedProjectsAsyncHandler;
+import org.sigmah.offline.handler.GetProjectByIdAsyncHandler;
 import org.sigmah.offline.handler.GetProjectDocumentsAsyncHandler;
 import org.sigmah.offline.handler.GetProjectReportAsyncHandler;
 import org.sigmah.offline.handler.GetProjectReportsAsyncHandler;
@@ -84,6 +85,7 @@ import org.sigmah.shared.command.BatchCommand;
 import org.sigmah.shared.command.CreateEntity;
 import org.sigmah.shared.command.Delete;
 import org.sigmah.shared.command.GetLinkedProjects;
+import org.sigmah.shared.command.GetProjectById;
 import org.sigmah.shared.command.GetProjectDocuments;
 import org.sigmah.shared.command.GetProjectReport;
 import org.sigmah.shared.command.GetProjectReports;
@@ -145,7 +147,8 @@ public class OfflineModule extends AbstractGinModule {
 			UpdateMonitoredPointsAsyncHandler updateMonitoredPointsAsyncHandler,
 			UpdateProjectAsyncHandler updateProjectAsyncHandler,
 			UpdateProjectFavoriteAsyncHandler updateProjectFavoriteAsyncHandler,
-			UpdateRemindersAsyncHandler updateRemindersAsyncHandler) {
+			UpdateRemindersAsyncHandler updateRemindersAsyncHandler,
+			GetProjectByIdAsyncHandler getProjectByIdAsyncHandler) {
 		
 		localDispatchAsync = new LocalDispatchServiceAsync(authenticationProvider);
 		if(dispatchAsync instanceof SecureDispatchAsync) {
@@ -187,6 +190,8 @@ public class OfflineModule extends AbstractGinModule {
         registerHandler(UpdateProject.class, updateProjectAsyncHandler);
         registerHandler(UpdateProjectFavorite.class, updateProjectFavoriteAsyncHandler);
 		registerHandler(UpdateReminders.class, updateRemindersAsyncHandler);
+		
+		registerHandler(GetProjectById.class, getProjectByIdAsyncHandler);
 				
         return localDispatchAsync;
 	}

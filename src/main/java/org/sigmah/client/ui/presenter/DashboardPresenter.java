@@ -59,6 +59,7 @@ import com.extjs.gxt.ui.client.event.ButtonEvent;
 import com.extjs.gxt.ui.client.event.Listener;
 import com.extjs.gxt.ui.client.store.ListStore;
 import com.extjs.gxt.ui.client.widget.Component;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.AbstractImagePrototype;
 import com.google.inject.ImplementedBy;
 import com.google.inject.Inject;
@@ -366,8 +367,14 @@ public class DashboardPresenter extends AbstractPagePresenter<DashboardPresenter
 
 			final PageRequest request = new PageRequest(Page.CREATE_PROJECT);
 			request.addParameter(RequestParameter.TYPE, CreateProjectPresenter.Mode.PROJECT);
-
 			view.addMenuButton(I18N.CONSTANTS.createProjectNewProject(), IconImageBundle.ICONS.add(), new ButtonClickHandler(request));
+			
+//			view.addMenuButton(I18N.CONSTANTS.createProjectNewProject(), IconImageBundle.ICONS.add(), new Listener<ButtonEvent>() {
+//				@Override
+//				public void handleEvent(ButtonEvent be) {
+//					eventBus.navigate(Page.FORMATION);					
+//				}
+//			});
 		}
 
 		// Draft project.

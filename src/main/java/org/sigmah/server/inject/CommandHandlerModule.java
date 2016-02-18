@@ -75,6 +75,7 @@ import org.sigmah.server.handler.GetOrganizationHandler;
 import org.sigmah.server.handler.GetPrivacyGroupsHandler;
 import org.sigmah.server.handler.GetProfilesHandler;
 import org.sigmah.server.handler.GetProfilesWithDetailsHandler;
+import org.sigmah.server.handler.GetProjectByIdHandler;
 import org.sigmah.server.handler.GetProjectDocumentsHandler;
 import org.sigmah.server.handler.GetProjectHandler;
 import org.sigmah.server.handler.GetProjectModelCopyHandler;
@@ -180,6 +181,7 @@ import org.sigmah.shared.command.GetPrivacyGroups;
 import org.sigmah.shared.command.GetProfiles;
 import org.sigmah.shared.command.GetProfilesWithDetails;
 import org.sigmah.shared.command.GetProject;
+import org.sigmah.shared.command.GetProjectById;
 import org.sigmah.shared.command.GetProjectDocuments;
 import org.sigmah.shared.command.GetProjectModel;
 import org.sigmah.shared.command.GetProjectModelCopy;
@@ -353,6 +355,8 @@ public class CommandHandlerModule extends AbstractCommandHandlerModule {
 		bindHandler(UpdateReminders.class, UpdateRemindersHandler.class);
 		bindHandler(UpdateSubscription.class, UpdateSubscriptionHandler.class);
 		bindHandler(UploadSlice.class, UploadSliceHandler.class);
+		
+		bindHandler(GetProjectById.class, GetProjectByIdHandler.class);
 	}
 
 }

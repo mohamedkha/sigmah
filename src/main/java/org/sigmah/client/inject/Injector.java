@@ -105,6 +105,7 @@ import org.sigmah.shared.file.TransfertManager;
 
 import com.google.gwt.inject.client.GinModules;
 import com.google.gwt.inject.client.Ginjector;
+import org.sigmah.client.ui.presenter.formation.FormationPresenter;
 import org.sigmah.client.ui.presenter.password.ChangeOwnPasswordPresenter;
 import org.sigmah.offline.presenter.FileSelectionPresenter;
 import org.sigmah.offline.status.ApplicationStateManager;
@@ -306,5 +307,7 @@ public interface Injector extends Ginjector {
 	// ---- Offline presenters
 	
 	FileSelectionPresenter getFileSelectionPresenter();
+	
+	FormationPresenter getFormationPresenter();
 	
 }

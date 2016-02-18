@@ -213,6 +213,7 @@ public class Sigmah implements EntryPoint {
 		injector.getAddImportationSchemePresenter();
 
 		injector.getFileSelectionPresenter();
+		injector.getFormationPresenter();
 
 		// Propagates the network state.
 		injector.getApplicationStateManager().fireCurrentState(new Runnable() {

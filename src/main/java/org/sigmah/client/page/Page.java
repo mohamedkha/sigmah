@@ -107,7 +107,8 @@ public enum Page implements IsSerializable {
 	CREDITS("credits", true),
 	HELP("help", true),
 	CREATE_PROJECT("create-project", true),
-	IMPORT_VALUES("import-values"), ;
+	IMPORT_VALUES("import-values"),
+	FORMATION("formation");
 
 	private final String parentKey;
 	private final String token;
